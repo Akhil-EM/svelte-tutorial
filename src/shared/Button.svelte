@@ -1,0 +1,40 @@
+<script>
+ export let type = 'primary';
+ export let flat = true;
+ export let inverse = false;
+</script>
+<button class={type} class:flat={flat} class:inverse={inverse} on:click>
+    <slot></slot>
+</button>
+<style>
+  button{
+    cursor: pointer;
+    border: 0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-weight: bold;
+    box-shadow:1px 2px 3px rgb(0,0, 0,0.2);
+  }
+  .primary{
+    background-color:#d91b42;
+    color:#fff;
+    
+  }
+  .secondary{
+     background-color: #45c496;
+     color: #fff;
+  }
+  .flat{
+    box-shadow: none;
+  }
+  .primary.inverse{
+    color:#d91b42;
+    background-color:#fff;
+    border:2px solid #d91b42;
+  }
+  .secondary.inverse{
+    color: #45c496;
+    background-color: #fff;
+    border:2px solid #45c496;
+  }
+</style>
